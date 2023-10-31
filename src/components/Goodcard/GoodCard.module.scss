@@ -1,0 +1,48 @@
+.card {
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1rem 0.4rem 0 0.4rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 5px 5px 15px #c5c5c5;
+}
+
+.card_title {
+    font-size: 1.3rem;
+    color: #3f3f3f;
+    font-weight: 500;
+    position: relative;
+}
+
+.card_title::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3f3f3f;
+    content: '';
+    transition: width 0.3s ease-out;
+}
+
+.card:hover .card_title::after {
+    width: 100%;
+}
+
+.card_img {
+    margin-top: 1rem;
+    width: 100%;
+    border-end-start-radius: 10px;
+    border-end-end-radius: 10px;
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 100px;
+    }
+
+    .card_title {
+        font-size: 1rem;
+    }
+}
