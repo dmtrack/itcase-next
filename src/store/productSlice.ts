@@ -1,31 +1,13 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { ISizes, IProduct } from '../ts/interfaces';
-import { getProduct, getProducts, getSizes } from '../services/api';
+import { fetchCurrentProduct, fetchProducts, fetchSizes } from './actions';
 
 interface ISliceState {
-    sizes: ISizes[] | null;
-    products: IProduct[] | null;
-    currentProduct: IProduct | null;
+    sizes: ISizes[] | unknown;
+    products: IProduct[] | unknown;
+    currentProduct: IProduct | unknown;
     loading: boolean;
 }
-
-export const fetchProducts = createAsyncThunk('fetchProducts', async () => {
-    const products = await getProducts();
-    return products;
-});
-
-export const fetchSizes = createAsyncThunk('fetchSizes', async () => {
-    const sizes = await getSizes();
-    return sizes;
-});
-
-export const fetchCurrentProduct = createAsyncThunk(
-    'fetchCurrentProduct',
-    async (id: number) => {
-        const currentProduct = await getProduct(id);
-        return currentProduct;
-    }
-);
 
 const initialState: ISliceState = {
     sizes: null,
@@ -35,7 +17,7 @@ const initialState: ISliceState = {
 };
 
 const productSlice = createSlice({
-    name: 'goods',
+    name: 'products',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
@@ -52,7 +34,7 @@ const productSlice = createSlice({
             })
             .addCase(fetchCurrentProduct.fulfilled, (state, action) => {
                 state.loading = false;
-                state.currentProduct = action.payload;
+                state.currentProduct = action?.payload;
             })
             .addCase(fetchCurrentProduct.pending, (state) => {
                 state.loading = true;

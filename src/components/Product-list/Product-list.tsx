@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { IProduct } from '../../ts/interfaces';
 import styles from './Product-list.module.css';
 import ProductCard from '../Product-card/Product-card';
-import { fetchProducts } from '@/redux/productSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/use-redux';
+import { useAppDispatch, useAppSelector } from '@/store/use-redux';
+import { fetchProducts } from '@/store/actions';
 
 const ProductList = () => {
     const dispatch = useAppDispatch();
