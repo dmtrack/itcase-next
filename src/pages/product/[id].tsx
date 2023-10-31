@@ -2,9 +2,9 @@ import styles from './Product.module.scss';
 import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@/store/use-redux';
 import Gallery from '@/components/Gallery/Gallery';
-import ProductInfo from '@/components/Product-info/Product-info';
 import { useRouter } from 'next/router';
 import { fetchCurrentProduct, fetchSizes } from '@/store/actions';
+import ProductInfo from '@/components/ProductInfo/ProductInfo';
 
 const Product = () => {
     const dispatch = useAppDispatch();
