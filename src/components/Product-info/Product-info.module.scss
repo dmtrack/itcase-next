@@ -1,0 +1,56 @@
+@import '../../styles/_variables.scss';
+
+.product_info {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.product_info_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: start;
+    align-items: start;
+}
+
+.product_info h2 {
+    margin: 0;
+}
+
+.product_info_btn_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.btn_group_btn {
+    padding: 0.8rem 1.2rem;
+    /* border: solid 2px #3f3f3f; */
+    border-radius: 4px;
+}
+
+.btn_group_btn:hover {
+    cursor: pointer;
+    background-color: $color-green;
+}
+
+.btn_group_btn_active {
+    background-color: $color-dark-blue;
+    color: #fff;
+}
+
+@media (max-width: 576px) {
+    .product_info {
+        margin: 1rem auto auto auto;
+    }
+
+    .product_info_wrapper {
+        width: 75%;
+    }
+}

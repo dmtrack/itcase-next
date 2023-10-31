@@ -1,11 +1,23 @@
 {
-  "name": "itcase-next",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  }
+    "name": "itcase-next",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "^1.9.5",
+        "classnames": "^2.3.2",
+        "next": "^13.4.6",
+        "react-redux": "^8.1.1",
+        "sass": "^1.63.6",
+        "uuid": "^9.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "20.8.10",
+        "typescript": "5.2.2"
+    }
 }

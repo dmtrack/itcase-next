@@ -1,0 +1,45 @@
+@import '../../styles/_variables.scss';
+
+.gallery {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.gallery_img {
+    width: 100%;
+}
+
+.gallery_controls {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: -2rem;
+    margin-bottom: -2rem;
+}
+
+.control_button {
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
+    border: none;
+    opacity: 0.8;
+    background-color: $color-green;
+    border-radius: 50px;
+}
+
+.control_button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+@media (max-width: 576px) {
+    .gallery {
+        margin: auto;
+        align-items: center;
+    }
+}
