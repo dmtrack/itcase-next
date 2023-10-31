@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { IProduct } from '../../ts/interfaces';
-import styles from './GoodCard.module.scss';
+import styles from './Product-card.module.scss';
+import Typography from '../Typography';
 
 const ProductCard = (product: IProduct) => {
     const { colors, name, id } = product;
 
     return (
-        <Link href={`/good?id=${id}`} className={styles.card}>
-            <span className={styles.card_title}>{name}</span>
+        <Link href={`/product/${id}`} className={styles.card}>
+            <Typography className={styles.card_title}>{name}</Typography>
             <img
                 className={styles.card_img}
                 alt='фото товара'

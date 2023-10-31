@@ -1,13 +1,13 @@
 import React, { FC, useState } from 'react';
 
-import styles from './Goodlist.module.scss';
+import styles from './Gallery.module.scss';
 import Image from 'next/image';
 
 interface IProps {
     images: string[];
 }
 
-const Goodlist: FC<IProps> = ({ images }) => {
+const Gallery: FC<IProps> = ({ images }) => {
     const [index, setIndex] = useState(0);
 
     const setNextIndex = (): void => {
@@ -31,6 +31,8 @@ const Goodlist: FC<IProps> = ({ images }) => {
                 className={styles.gallery_img}
                 src={images[index]}
                 alt='Фото товара'
+                width={300}
+                height={400}
             />
             <div className={styles.gallery_controls}>
                 <button
@@ -50,4 +52,4 @@ const Goodlist: FC<IProps> = ({ images }) => {
     );
 };
 
-export default Goodlist;
+export default Gallery;

@@ -1,5 +1,6 @@
 .card {
     width: 200px;
+    height: max-content;
     text-align: center;
     border-radius: 10px;
     padding: 1rem 0.4rem 0 0.4rem;
@@ -15,21 +16,6 @@
     position: relative;
 }
 
-.card_title::after {
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #3f3f3f;
-    content: '';
-    transition: width 0.3s ease-out;
-}
-
-.card:hover .card_title::after {
-    width: 100%;
-}
-
 .card_img {
     margin-top: 1rem;
     width: 100%;
@@ -39,7 +25,7 @@
 
 @media (max-width: 576px) {
     .card {
-        width: 100px;
+        width: 100%;
     }
 
     .card_title {

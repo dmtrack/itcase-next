@@ -1,10 +1,10 @@
+@import '../../styles/_variables.scss';
+
 .gallery {
     margin-left: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-end;
-    max-width: 300px;
 }
 
 .gallery_img {
@@ -18,35 +18,28 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    top: -3rem;
+    top: -2rem;
     margin-bottom: -2rem;
 }
 
 .control_button {
-    height: 3rem;
-    width: 3rem;
-    font-size: 2rem;
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
     border: none;
     opacity: 0.8;
-    background-color: #3f3f3f;
+    background-color: $color-green;
+    border-radius: 50px;
 }
 
 .control_button:hover {
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 @media (max-width: 576px) {
     .gallery {
         margin: auto;
         align-items: center;
-    }
-
-    .gallery_img {
-        width: 75%;
-    }
-
-    .gallery_controls {
-        width: 75%;
     }
 }

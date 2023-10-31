@@ -1,3 +1,4 @@
+import ProductList from '@/components/Product-list/Product-list';
 import Head from 'next/head';
 
 export default function Home() {
@@ -6,7 +7,9 @@ export default function Home() {
             <Head>
                 <title>itcases</title>
             </Head>
-            <main>123 </main>
+            <main>
+                <ProductList />
+            </main>
         </>
     );
 }
