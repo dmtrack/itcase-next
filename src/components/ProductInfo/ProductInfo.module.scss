@@ -30,8 +30,7 @@
 }
 
 .btn_group_btn {
-    padding: 0.8rem 1.2rem;
-    /* border: solid 2px #3f3f3f; */
+    padding: 0.8rem 1.1rem;
     border-radius: 4px;
 }
 
@@ -48,6 +47,11 @@
 @media (max-width: 576px) {
     .product_info {
         margin: 1rem auto auto auto;
+    }
+
+    .btn_group_btn {
+        padding: 0.2rem 0.8rem;
+        border-radius: 4px;
     }
 
     .product_info_wrapper {
