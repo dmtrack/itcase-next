@@ -1,3 +1,6 @@
+import Product from '@/pages/product/[id]';
+import { IProduct, ISizes } from '@/ts/interfaces';
+
 const sizes = [
     { id: 1, label: 'XS', number: 44 },
     { id: 2, label: 'S', number: 46 },
@@ -82,7 +85,7 @@ const products = [
     },
 ];
 
-function getSizes() {
+function getSizes(): Promise<ISizes[]> {
     return new Promise((resolve) => {
         setTimeout(() => resolve(sizes), 250);
     });
@@ -101,13 +104,13 @@ function getSize(id: number) {
     });
 }
 
-function getProducts() {
+function getProducts(): Promise<IProduct[]> {
     return new Promise((resolve) => {
         setTimeout(() => resolve(products), 250);
     });
 }
 
-function getProduct(id: number) {
+function getProduct(id: number): Promise<IProduct> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const product = products.find((product) => product.id == id);

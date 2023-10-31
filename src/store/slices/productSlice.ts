@@ -1,11 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { ISizes, IProduct } from '../ts/interfaces';
-import { fetchCurrentProduct, fetchProducts, fetchSizes } from './actions';
+import { ISizes, IProduct } from '../../ts/interfaces';
+import { fetchCurrentProduct, fetchProducts, fetchSizes } from '../actions';
 
 interface ISliceState {
-    sizes: ISizes[] | unknown;
-    products: IProduct[] | unknown;
-    currentProduct: IProduct | unknown;
+    sizes: ISizes[] | null;
+    products: IProduct[] | null;
+    currentProduct: IProduct | null;
     loading: boolean;
 }
 

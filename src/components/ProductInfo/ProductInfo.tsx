@@ -1,4 +1,4 @@
-import styles from './Product-info.module.scss';
+import styles from './ProductInfo.module.scss';
 import React, { SetStateAction, Dispatch, FC, useState } from 'react';
 import { useAppSelector } from '@/store/use-redux';
 import Typography from '../Typography';

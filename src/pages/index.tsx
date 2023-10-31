@@ -1,4 +1,4 @@
-import ProductList from '@/components/Product-list/Product-list';
+import ProductList from '@/components/ProductList/ProductList';
 import Head from 'next/head';
 
 export default function Home() {
