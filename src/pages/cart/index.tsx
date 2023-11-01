@@ -8,7 +8,10 @@ function CartPage() {
 
     return (
         <div className={styles.section}>
-            {items && items.map((p) => <CardItem key={p.id} {...p} />)}
+            {items &&
+                items.map((p) => (
+                    <CardItem key={new Date().getTime()} {...p} />
+                ))}
         </div>
     );
 }
