@@ -23,10 +23,11 @@ const ProductInfo: FC<IProps> = ({
     const availableSizes = currentColor?.sizes;
     let order: IOrder;
     const [currentSize, setCurrentSize] = useState<number | null>(null);
+
     if (currentColor) {
         order = {
-            id: currentColor?.id,
-            name: currentColor?.name,
+            id: currentProduct.id,
+            name: currentProduct?.name,
             images: currentColor?.images,
             description: currentColor?.description,
             price: currentColor.price,

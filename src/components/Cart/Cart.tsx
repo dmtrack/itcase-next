@@ -6,7 +6,6 @@ import { CartIcon } from '../../../public/icons/CartIcon';
 function Cart() {
     const router = useRouter();
     const items = useAppSelector((state) => state.cart.cartItems);
-    console.log(items, 'items');
     const handleGoCart = () => {
         router.push('/cart');
     };
