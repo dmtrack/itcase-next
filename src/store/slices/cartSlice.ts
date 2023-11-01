@@ -22,8 +22,7 @@ const cartSlice = createSlice({
         },
         removeItem: (state, action) => {
             const itemId = action.payload.buttonId;
-            const color = action.payload.color;
-            console.log(color, 'color');
+
             state.cartItems = state.cartItems.filter(
                 (item) => item.id !== itemId
             );

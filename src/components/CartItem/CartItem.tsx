@@ -12,7 +12,6 @@ const CartItem = (product: IOrder) => {
         const target = e.target as HTMLElement;
         const buttonId = target.id;
         const color = target.dataset.color;
-        console.log(color, 'color');
         dispatch(removeItem({ buttonId, color }));
     };
 
