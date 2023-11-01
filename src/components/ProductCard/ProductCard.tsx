@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { IProduct } from '../../ts/interfaces';
-import styles from './Product-card.module.scss';
+import styles from './ProductCard.module.scss';
 import Typography from '../Typography';
 
 const ProductCard = (product: IProduct) => {

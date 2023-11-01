@@ -1,5 +1,6 @@
 import Product from '@/pages/product/[id]';
-import { IProduct, ISizes } from '@/ts/interfaces';
+import { IOrder, IProduct, ISizes } from '@/ts/interfaces';
+import { resolve } from 'path';
 
 const sizes = [
     { id: 1, label: 'XS', number: 44 },
@@ -143,4 +144,17 @@ function getProductColor(productID: number, colorID: number) {
     });
 }
 
-export { getSizes, getSize, getProducts, getProduct, getProductColor };
+function addProduct(product: IOrder) {
+    return new Promise((resolve, reject) => {
+        resolve(product);
+    });
+}
+
+export {
+    getSizes,
+    getSize,
+    getProducts,
+    getProduct,
+    getProductColor,
+    addProduct,
+};

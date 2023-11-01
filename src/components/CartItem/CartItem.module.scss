@@ -1,0 +1,68 @@
+@import '../../styles/_variables.scss';
+
+.card {
+    width: 300px;
+    height: max-content;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1rem 0.4rem 0 0.4rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 5px 5px 15px #c5c5c5;
+}
+
+.card_title {
+    color: #3f3f3f;
+    font-weight: 500;
+    position: relative;
+    text-align: start;
+    margin-left: 0.5rem;
+}
+
+.card_panel {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.card_img {
+    margin-top: 1rem;
+    width: 100%;
+    border-end-start-radius: 10px;
+    border-end-end-radius: 10px;
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 100%;
+    }
+
+    .card_title {
+        font-size: 1rem;
+    }
+}
+
+.product_info_btn_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    align-self: center;
+}
+
+.btn_group_btn {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+
+.btn_group_btn:hover {
+    cursor: pointer;
+    background-color: $color-green;
+}
+
+.btn_group_btn_active {
+    background-color: $color-dark-blue;
+    color: #fff;
+}
