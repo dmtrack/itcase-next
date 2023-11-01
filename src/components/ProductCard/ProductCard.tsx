@@ -15,7 +15,7 @@ const ProductCard = (product: IProduct) => {
                     className={styles.card_img}
                     alt='фото товара'
                     src={colors[0].images[0]}
-                    height={250}
+                    height={350}
                     width={200}
                 />
             )}
