@@ -18,3 +18,12 @@ export interface IProduct {
     name: string;
     colors: IColors[];
 }
+
+export interface IOrder {
+    id: number;
+    name: string;
+    images: string[];
+    price: string;
+    description: string;
+    size: number | null;
+}

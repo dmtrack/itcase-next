@@ -1,7 +1,9 @@
 import styles from './ProductInfo.module.scss';
 import React, { SetStateAction, Dispatch, FC, useState } from 'react';
-import { useAppSelector } from '@/store/use-redux';
+import { useAppDispatch, useAppSelector } from '@/store/use-redux';
 import Typography from '../Typography';
+import { IOrder } from '@/ts/interfaces';
+import { addItem } from '@/store/slices/cartSlice';
 
 interface IProps {
     setSelectedColorIndex: Dispatch<SetStateAction<number>>;
@@ -12,15 +14,30 @@ const ProductInfo: FC<IProps> = ({
     setSelectedColorIndex,
     selectedColorIndex,
 }) => {
+    const dispatch = useAppDispatch();
     const currentProduct = useAppSelector(
         (state) => state.products.currentProduct
     );
     const allSizes = useAppSelector((state) => state.products.sizes);
     const currentColor = currentProduct?.colors[selectedColorIndex];
     const availableSizes = currentColor?.sizes;
-
+    let order: IOrder;
     const [currentSize, setCurrentSize] = useState<number | null>(null);
+    if (currentColor) {
+        order = {
+            id: currentColor?.id,
+            name: currentColor?.name,
+            images: currentColor?.images,
+            description: currentColor?.description,
+            price: currentColor.price,
+            size: currentSize,
+        };
+    }
 
+    const handleAddBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
+        dispatch(addItem(order));
+        setCurrentSize(null);
+    };
     return (
         <div className={styles.product_info}>
             <div className={styles.product_info_wrapper}>
@@ -64,6 +81,15 @@ const ProductInfo: FC<IProps> = ({
                             Все размеры распроданы
                         </Typography>
                     )}
+                </div>
+                <div className={styles.product_info_btn_group}>
+                    <button
+                        disabled={currentSize ? false : true}
+                        type='button'
+                        onClick={handleAddBasket}
+                        className={styles.btn_group_btn}>
+                        Добавить в корзину
+                    </button>
                 </div>
             </div>
         </div>
