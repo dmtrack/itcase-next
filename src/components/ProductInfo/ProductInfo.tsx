@@ -32,9 +32,9 @@ const ProductInfo: FC<IProps> = ({
             description: currentColor?.description,
             price: currentColor.price,
             size: currentSize,
+            color: currentColor.id,
         };
     }
-
     const handleAddBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
         dispatch(addItem(order));
         setCurrentSize(null);

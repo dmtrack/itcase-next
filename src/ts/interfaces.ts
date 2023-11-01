@@ -25,5 +25,6 @@ export interface IOrder {
     images: string[];
     price: string;
     description: string;
-    size: number | null;
+    size: number;
+    color: number;
 }
