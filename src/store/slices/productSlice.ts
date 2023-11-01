@@ -1,7 +1,6 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { ISizes, IProduct, IOrder } from '../../ts/interfaces';
 import { fetchCurrentProduct, fetchProducts, fetchSizes } from '../actions';
-import { addProduct } from '@/services/api';
 
 interface ISliceState {
     sizes: ISizes[] | null;

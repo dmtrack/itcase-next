@@ -1,6 +1,6 @@
 import styles from './ProductInfo.module.scss';
 import React, { SetStateAction, Dispatch, FC, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '@/store/use-redux';
+import { useAppDispatch, useAppSelector } from '@/store/useRedux';
 import Typography from '../Typography';
 import { IOrder } from '@/ts/interfaces';
 import { addItem } from '@/store/slices/cartSlice';

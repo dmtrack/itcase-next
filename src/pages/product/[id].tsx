@@ -1,6 +1,6 @@
 import styles from './Product.module.scss';
 import React, { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '@/store/use-redux';
+import { useAppDispatch, useAppSelector } from '@/store/useRedux';
 import Gallery from '@/components/Gallery/Gallery';
 import { useRouter } from 'next/router';
 import { fetchCurrentProduct, fetchSizes } from '@/store/actions';

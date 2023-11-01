@@ -1,4 +1,4 @@
-import { useAppSelector } from '@/store/stateHooks';
+import { useAppSelector } from '@/store/useRedux';
 import { Cart } from '../Cart/Cart';
 import Header from './Header/Header';
 import Meta from './Meta';

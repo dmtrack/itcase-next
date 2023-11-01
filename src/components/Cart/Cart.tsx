@@ -1,6 +1,6 @@
 import styles from './Cart.module.scss';
 import { useRouter } from 'next/router';
-import { useAppSelector } from '@/store/use-redux';
+import { useAppSelector } from '@/store/useRedux';
 import { CartIcon } from '../../../public/icons/CartIcon';
 
 function Cart() {
