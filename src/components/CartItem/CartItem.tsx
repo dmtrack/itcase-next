@@ -5,12 +5,13 @@ import Typography from '../Typography';
 import { useAppDispatch } from '@/store/useRedux';
 import { removeItem } from '@/store/slices/cartSlice';
 
-const CardItem = (product: IOrder) => {
+const CartItem = (product: IOrder) => {
     const { id, name, price, size, images } = product;
     const dispatch = useAppDispatch();
-
     const handleCartDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
-        dispatch(removeItem(id));
+        const target = e.target as HTMLElement;
+        const buttonId = target.id;
+        dispatch(removeItem(buttonId));
     };
 
     return (
@@ -36,6 +37,7 @@ const CardItem = (product: IOrder) => {
                 </div>
                 <div className={styles.product_info_btn_group}>
                     <button
+                        id={id.toString()}
                         type='button'
                         onClick={handleCartDelete}
                         className={styles.btn_group_btn}>
@@ -47,4 +49,4 @@ const CardItem = (product: IOrder) => {
     );
 };
 
-export default CardItem;
+export default CartItem;
