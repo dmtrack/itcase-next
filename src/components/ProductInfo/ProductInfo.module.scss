@@ -34,7 +34,18 @@
     border-radius: 4px;
 }
 
+.btn_group_btn_add {
+    padding: 0.8rem 1.1rem;
+    border-radius: 4px;
+    width: 100%;
+}
+
 .btn_group_btn:hover {
+    cursor: pointer;
+    background-color: $color-green;
+}
+
+.btn_group_btn_add:hover {
     cursor: pointer;
     background-color: $color-green;
 }

@@ -93,7 +93,7 @@ const ProductInfo: FC<IProps> = ({
                         disabled={currentSize ? false : true}
                         type='button'
                         onClick={handleAddBasket}
-                        className={styles.btn_group_btn}>
+                        className={styles.btn_group_btn_add}>
                         Добавить в корзину
                     </button>
                 </div>
