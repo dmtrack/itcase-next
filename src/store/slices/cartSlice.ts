@@ -22,13 +22,10 @@ const cartSlice = createSlice({
         },
         removeItem: (state, action) => {
             const itemId = action.payload;
-            const index = state.cartItems.findIndex(
-                (item) => item.id === itemId
+
+            state.cartItems = state.cartItems.filter(
+                (item) => Number(item.id) !== Number(itemId)
             );
-            state.cartItems = [
-                ...state.cartItems.slice(0, index),
-                ...state.cartItems.slice(index + 1),
-            ];
         },
         addItem: (state, { payload }) => {
             const size = payload.size;
