@@ -21,16 +21,20 @@ const cartSlice = createSlice({
             state.cartItems = [];
         },
         removeItem: (state, action) => {
-            const itemId = action.payload;
+            const itemId = action.payload.buttonId;
 
             state.cartItems = state.cartItems.filter(
-                (item) => Number(item.id) !== Number(itemId)
+                (item) => item.id !== itemId
             );
         },
         addItem: (state, { payload }) => {
             const size = payload.size;
+            const color = payload.color;
             const itemExist = state.cartItems.find(
-                (item) => item.size === size && item.id === payload.id
+                (item) =>
+                    item.size === size &&
+                    item.color === color &&
+                    item.id === payload.id
             );
             if (!itemExist) {
                 state.cartItems = [...state.cartItems, payload];

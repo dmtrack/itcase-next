@@ -26,15 +26,20 @@ const ProductInfo: FC<IProps> = ({
 
     if (currentColor && currentSize) {
         order = {
-            id: currentProduct.id + currentSize,
+            id:
+                currentProduct.id +
+                currentSize +
+                currentColor.id +
+                currentColor.name +
+                currentProduct.name,
             name: currentProduct?.name,
             images: currentColor?.images,
             description: currentColor?.description,
             price: currentColor.price,
             size: currentSize,
+            color: currentColor.name,
         };
     }
-
     const handleAddBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
         dispatch(addItem(order));
         setCurrentSize(null);

@@ -6,12 +6,13 @@ import { useAppDispatch } from '@/store/useRedux';
 import { removeItem } from '@/store/slices/cartSlice';
 
 const CartItem = (product: IOrder) => {
-    const { id, name, price, size, images } = product;
+    const { id, name, price, size, images, color } = product;
     const dispatch = useAppDispatch();
     const handleCartDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
         const target = e.target as HTMLElement;
         const buttonId = target.id;
-        dispatch(removeItem(buttonId));
+        const color = target.dataset.color;
+        dispatch(removeItem({ buttonId, color }));
     };
 
     return (
@@ -38,6 +39,7 @@ const CartItem = (product: IOrder) => {
                 <div className={styles.product_info_btn_group}>
                     <button
                         id={id.toString()}
+                        data-color={color}
                         type='button'
                         onClick={handleCartDelete}
                         className={styles.btn_group_btn}>
