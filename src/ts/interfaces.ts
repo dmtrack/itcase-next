@@ -20,11 +20,11 @@ export interface IProduct {
 }
 
 export interface IOrder {
-    id: number;
+    id: string;
     name: string;
     images: string[];
     price: string;
     description: string;
     size: number;
-    color: number;
+    color: string;
 }

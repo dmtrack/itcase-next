@@ -21,10 +21,11 @@ const cartSlice = createSlice({
             state.cartItems = [];
         },
         removeItem: (state, action) => {
-            const itemId = action.payload;
-
+            const itemId = action.payload.buttonId;
+            const color = action.payload.color;
+            console.log(color, 'color');
             state.cartItems = state.cartItems.filter(
-                (item) => Number(item.id) !== Number(itemId)
+                (item) => item.id !== itemId
             );
         },
         addItem: (state, { payload }) => {
