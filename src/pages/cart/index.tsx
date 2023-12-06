@@ -3,7 +3,6 @@ import React from 'react';
 import CardItem from '@/components/CartItem/CartItem';
 import { useAppSelector } from '@/store/useRedux';
 import Typography from '@/components/Typography';
-const { v4: uuidv4 } = require('uuid');
 
 function CartPage() {
     const items = useAppSelector((state) => state.cart.cartItems);
@@ -17,7 +16,7 @@ function CartPage() {
             )}
 
             <div className={styles.section}>
-                {items && items.map((p) => <CardItem key={uuidv4()} {...p} />)}
+                {items && items.map((p) => <CardItem key={p.id} {...p} />)}
             </div>
         </>
     );

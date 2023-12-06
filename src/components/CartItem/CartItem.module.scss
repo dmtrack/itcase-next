@@ -1,7 +1,7 @@
 @import '../../styles/_variables.scss';
 
 .card {
-    width: 300px;
+    max-width: 300px;
     height: max-content;
     text-align: center;
     border-radius: 10px;

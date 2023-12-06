@@ -1,6 +1,6 @@
 ## itcase-next
 
-This is test task for the company
+This is true story...
 
 [deploy link](https://itcase-next.vercel.app)
 
