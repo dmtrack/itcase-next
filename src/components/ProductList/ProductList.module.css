@@ -1,6 +1,7 @@
 .section {
-    margin-top: 4rem;
-    padding: 0 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
