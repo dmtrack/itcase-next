@@ -4,6 +4,7 @@ import { IOrder } from '../../ts/interfaces';
 import Typography from '../Typography';
 import { useAppDispatch } from '@/store/useRedux';
 import { removeItem } from '@/store/slices/cartSlice';
+import Image from 'next/image';
 
 const CartItem = (product: IOrder) => {
     const { id, name, price, size, images, color } = product;
@@ -17,10 +18,12 @@ const CartItem = (product: IOrder) => {
 
     return (
         <div className={styles.card}>
-            <img
+            <Image
                 className={styles.card_img}
                 alt='фото товара'
                 src={images[0]}
+                height={350}
+                width={200}
             />
 
             <div className={styles.card_panel}>

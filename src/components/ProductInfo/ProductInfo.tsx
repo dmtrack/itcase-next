@@ -15,32 +15,35 @@ const ProductInfo: FC<IProps> = ({
     selectedColorIndex,
 }) => {
     const dispatch = useAppDispatch();
-    const currentProduct = useAppSelector(
-        (state) => state.products.currentProduct
-    );
+    const { currentProduct } = useAppSelector((state) => state.products);
     const allSizes = useAppSelector((state) => state.products.sizes);
     const currentColor = currentProduct?.colors[selectedColorIndex];
     const availableSizes = currentColor?.sizes;
+
     let order: IOrder;
     const [currentSize, setCurrentSize] = useState<number | null>(null);
 
     if (currentColor && currentSize) {
-        order = {
-            id:
-                currentProduct.id +
-                currentSize +
-                currentColor.id +
-                currentColor.name +
-                currentProduct.name,
-            name: currentProduct?.name,
-            images: currentColor?.images,
-            description: currentColor?.description,
-            price: currentColor.price,
-            size: currentSize,
-            color: currentColor.name,
-        };
+        const sizeLabel = allSizes?.filter((size) => size.id === currentSize)[0]
+            .label;
+        if (sizeLabel) {
+            order = {
+                id:
+                    currentProduct.id +
+                    currentSize +
+                    currentColor.id +
+                    currentColor.name +
+                    currentProduct.name,
+                name: currentProduct?.name,
+                images: currentColor?.images,
+                description: currentColor?.description,
+                price: currentColor.price,
+                size: sizeLabel,
+                color: currentColor.name,
+            };
+        }
     }
-    const handleAddBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleAddBasket = () => {
         dispatch(addItem(order));
         setCurrentSize(null);
     };

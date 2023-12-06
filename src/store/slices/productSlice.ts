@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ISizes, IProduct, IOrder } from '../../ts/interfaces';
+import { ISizes, IProduct } from '../../ts/interfaces';
 import { fetchCurrentProduct, fetchProducts, fetchSizes } from '../actions';
 
 interface ISliceState {
@@ -26,7 +26,6 @@ const productSlice = createSlice({
                 state.loading = false;
                 state.products = action.payload;
             })
-
             .addCase(fetchProducts.pending, (state) => {
                 state.loading = true;
             })
@@ -53,17 +52,6 @@ const productSlice = createSlice({
             .addCase(fetchSizes.rejected, (state) => {
                 state.loading = false;
             });
-        // .addCase(addProduct.fulfilled, (state, action) => {
-        //     state.loading = false;
-        //     state.order = action.payload;
-        // })
-
-        // .addCase(addProduct.pending, (state) => {
-        //     state.loading = true;
-        // })
-        // .addCase(addProduct.rejected, (state) => {
-        //     state.loading = false;
-        // });
     },
 });
 
