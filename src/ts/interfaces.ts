@@ -27,4 +27,5 @@ export interface IOrder {
     description: string;
     size: string;
     color: string;
+    productId: number;
 }

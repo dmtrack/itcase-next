@@ -1,9 +1,10 @@
 import styles from './ProductInfo.module.scss';
-import React, { SetStateAction, Dispatch, FC, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '@/store/useRedux';
+import React, { SetStateAction, Dispatch, FC } from 'react';
+import { useAppDispatch } from '@/store/useRedux';
 import Typography from '../Typography';
 import { IOrder } from '@/ts/interfaces';
 import { addItem } from '@/store/slices/cartSlice';
+import { useProductParams } from '@/hooks/useProductParams';
 
 interface IProps {
     setSelectedColorIndex: Dispatch<SetStateAction<number>>;
@@ -15,15 +16,19 @@ const ProductInfo: FC<IProps> = ({
     selectedColorIndex,
 }) => {
     const dispatch = useAppDispatch();
-    const { currentProduct } = useAppSelector((state) => state.products);
-    const allSizes = useAppSelector((state) => state.products.sizes);
-    const currentColor = currentProduct?.colors[selectedColorIndex];
-    const availableSizes = currentColor?.sizes;
+
+    const {
+        currentProduct,
+        currentColor,
+        allSizes,
+        availableSizes,
+        currentSize,
+        setCurrentSize,
+    } = useProductParams(selectedColorIndex);
 
     let order: IOrder;
-    const [currentSize, setCurrentSize] = useState<number | null>(null);
 
-    if (currentColor && currentSize) {
+    if (currentColor && currentSize && currentProduct) {
         const sizeLabel = allSizes?.filter((size) => size.id === currentSize)[0]
             .label;
         if (sizeLabel) {
@@ -40,6 +45,7 @@ const ProductInfo: FC<IProps> = ({
                 price: currentColor.price,
                 size: sizeLabel,
                 color: currentColor.name,
+                productId: currentProduct.id,
             };
         }
     }
@@ -47,6 +53,7 @@ const ProductInfo: FC<IProps> = ({
         dispatch(addItem(order));
         setCurrentSize(null);
     };
+
     return (
         <div className={styles.product_info}>
             <div className={styles.product_info_wrapper}>

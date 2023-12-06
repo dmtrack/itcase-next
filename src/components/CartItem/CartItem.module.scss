@@ -1,14 +1,15 @@
 @import '../../styles/_variables.scss';
 
 .card {
-    max-width: 300px;
+    max-width: 40rem;
     height: max-content;
     text-align: center;
-    border-radius: 10px;
-    padding: 1rem 0.4rem 0 0.4rem;
-    font-size: 1.2rem;
+    border-radius: 1rem;
+    font-size: $font-size-xs;
     text-decoration: none;
-    box-shadow: 5px 5px 15px #c5c5c5;
+    box-shadow: 0.5rem 0.5rem 1.5rem #c5c5c5;
+
+    margin-bottom: 2rem;
 }
 
 .card_title {
@@ -23,22 +24,31 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+
+    padding: 1rem 1rem;
 }
 
 .card_img {
-    margin-top: 1rem;
     width: 100%;
-    border-end-start-radius: 10px;
-    border-end-end-radius: 10px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 57.6rem) {
     .card {
-        width: 100%;
+        width: 40rem;
     }
 
     .card_title {
-        font-size: 1rem;
+        font-size: $font-size-s;
+        margin-left: 3rem;
+    }
+
+    .card_img {
+        width: 30rem;
+    }
+
+    .btn_group_btn {
+        padding: 0.3rem 0.6rem;
+        margin-right: 3rem;
     }
 }
 
@@ -48,18 +58,17 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 0.5rem;
-
     align-self: center;
 }
 
 .btn_group_btn {
     padding: 0.3rem 0.6rem;
-    border-radius: 4px;
+    border-radius: 0.4rem;
 }
 
 .btn_group_btn:hover {
     cursor: pointer;
-    background-color: $color-green;
+    background-color: $color-coral;
 }
 
 .btn_group_btn_active {

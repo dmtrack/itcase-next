@@ -22,22 +22,35 @@
     margin-bottom: -2rem;
 }
 
-.control_button {
+.control_button_right {
     height: 2rem;
-    width: 2rem;
-    font-size: 1rem;
+    width: 3rem;
+    font-size: $font-size-xs;
     border: none;
-    opacity: 0.8;
-    background-color: $color-green;
-    border-radius: 50px;
+    opacity: 0.9;
 }
 
-.control_button:hover {
+.control_button_left {
+    height: 2rem;
+    width: 3rem;
+    font-size: $font-size-xs;
+    border: none;
+    opacity: 0.9;
+}
+
+.control_button_left:hover {
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.8;
+    background-color: $color-coral;
 }
 
-@media (max-width: 576px) {
+.control_button_right:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: $color-coral;
+}
+
+@media (max-width: 57.6rem) {
     .gallery {
         margin: auto;
         align-items: center;

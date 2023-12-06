@@ -2,15 +2,15 @@
 
 .cart {
     position: fixed;
-    top: 1rem;
+    top: 2rem;
     right: 1.5rem;
     cursor: pointer;
     z-index: 5;
     padding: 1rem;
-    color: $color-green;
+    color: $color-coral;
 
-    @media (min-width: 767px) {
-        top: 1rem;
+    @media (min-width: 76.7rem) {
+        top: 2rem;
         bottom: unset;
     }
 }

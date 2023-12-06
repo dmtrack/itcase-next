@@ -3,6 +3,6 @@
     padding: 0 3rem;
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
