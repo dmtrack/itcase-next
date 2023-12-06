@@ -5,15 +5,20 @@ import Typography from '../Typography';
 import { useAppDispatch } from '@/store/useRedux';
 import { removeItem } from '@/store/slices/cartSlice';
 import Image from 'next/image';
+import { useRouter } from 'next/dist/client/router';
 
 const CartItem = (product: IOrder) => {
-    const { id, name, price, size, images, color } = product;
     const dispatch = useAppDispatch();
-    const handleCartDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
-        const target = e.target as HTMLElement;
-        const buttonId = target.id;
-        const color = target.dataset.color;
-        dispatch(removeItem({ buttonId, color }));
+    const router = useRouter();
+
+    const { id, name, price, size, images, productId } = product;
+
+    const handleCartDelete = () => {
+        dispatch(removeItem({ id }));
+    };
+
+    const handleGoProduct = () => {
+        router.replace(`product/${productId}`);
     };
 
     return (
@@ -24,25 +29,24 @@ const CartItem = (product: IOrder) => {
                 src={images[0]}
                 height={350}
                 width={200}
+                onClick={handleGoProduct}
             />
 
             <div className={styles.card_panel}>
                 <div className={styles.card_info}>
                     {' '}
                     <Typography variant='h5' className={styles.card_title}>
-                        Наименование: {name}
+                        {name}
                     </Typography>{' '}
                     <Typography className={styles.card_title}>
                         Цена: {price}
                     </Typography>{' '}
                     <Typography className={styles.card_title}>
-                        Размер: {size}
+                        {size}
                     </Typography>
                 </div>
                 <div className={styles.product_info_btn_group}>
                     <button
-                        id={id.toString()}
-                        data-color={color}
                         type='button'
                         onClick={handleCartDelete}
                         className={styles.btn_group_btn}>

@@ -2,7 +2,7 @@
 
 .product_info {
     width: 100%;
-    max-width: 400px;
+    max-width: 40rem;
     display: flex;
     justify-content: center;
 }
@@ -31,23 +31,23 @@
 
 .btn_group_btn {
     padding: 0.8rem 1.1rem;
-    border-radius: 4px;
+    border-radius: 0.4rem;
 }
 
 .btn_group_btn_add {
     padding: 0.8rem 1.1rem;
-    border-radius: 4px;
+    border-radius: 0.4rem;
     width: 100%;
 }
 
 .btn_group_btn:hover {
     cursor: pointer;
-    background-color: $color-green;
+    background-color: $color-coral;
 }
 
 .btn_group_btn_add:hover {
     cursor: pointer;
-    background-color: $color-green;
+    background-color: $color-coral;
 }
 
 .btn_group_btn_active {
@@ -55,14 +55,14 @@
     color: #fff;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 57.6rem) {
     .product_info {
         margin: 1rem auto auto auto;
     }
 
     .btn_group_btn {
         padding: 0.2rem 0.8rem;
-        border-radius: 4px;
+        border-radius: 0.4rem;
     }
 
     .product_info_wrapper {

@@ -13,7 +13,7 @@ function Header() {
         <header className={styles.header}>
             <div className={styles.container}>
                 <Typography variant='h1' color='white' onClick={handleGoHome}>
-                    Brandshop
+                    IT-cases
                 </Typography>
             </div>
         </header>

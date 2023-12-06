@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react';
-
 import styles from './Gallery.module.scss';
 import Image from 'next/image';
 
@@ -38,13 +37,13 @@ const Gallery: FC<IProps> = ({ images }) => {
                 <button
                     onClick={setPrevIndex}
                     type='button'
-                    className={styles.control_button}>
+                    className={styles.control_button_left}>
                     {'<'}
                 </button>
                 <button
                     onClick={setNextIndex}
                     type='button'
-                    className={styles.control_button}>
+                    className={styles.control_button_right}>
                     {'>'}
                 </button>
             </div>
