@@ -2,7 +2,7 @@
 
 This is true story...
 
-[deploy link](https://itcases-next.vercel.app)
+[deploy link](https://itcase-next.vercel.app)
 
 ## Preview
 
